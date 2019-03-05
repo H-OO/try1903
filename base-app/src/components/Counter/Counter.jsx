@@ -65,6 +65,7 @@ class Counter extends Component {
     // const c = compose(m)
     // console.log(c)
 
+    console.log(applyMiddleware(thunk))
     const store = createStore(rootReducers, applyMiddleware(thunk))
     console.log(store)
 
