@@ -51,6 +51,8 @@ class Counter extends Component {
         }
         const chain = middlewares.map(middleware => middleware(middlewareAPI))
         dispatch = compose(...chain)(store.dispatch)
+        console.log('===')
+        console.log(dispatch)
     
         return {
           ...store,
@@ -65,11 +67,15 @@ class Counter extends Component {
     // const c = compose(m)
     // console.log(c)
 
-    console.log(applyMiddleware(thunk))
-    const store = createStore(rootReducers, applyMiddleware(thunk))
+    const logger = require('redux-logger').createLogger()
+    console.log('logger')
+    console.log(logger)
+    const m = applyMiddleware(thunk, logger)
+    console.log('m')
+    console.log(m)
+    const store = createStore(rootReducers, m)
     console.log(store)
 
-    debugger
   }
   render() {
     return (

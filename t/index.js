@@ -1,11 +1,11 @@
 function compose(...funcs) {
-  console.log(funcs)
-  return funcs.reduce((a, b) => (...args) => a(b(...args)))
+  return funcs.reduce((x, y) => (...args) => x(y(...args))) // 核心代码
 }
 
-const a = () => {}
-const b = () => {}
-const c = () => {}
+const a = (args) => {return args}
+const b = (args) => {return args}
+const c = (args = 'c') => {return args}
 
-const res = compose(a(), b(), c())
-console.log(res)
+const res = compose(a, b, c)
+console.log(res) // (...args) => x(y(...args))
+console.log(res('xxx')) // xxx
