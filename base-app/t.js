@@ -1,26 +1,26 @@
-async function a() {
-  console.log('a start')
-  await b() // resolve(b())
-  console.log('a end')
-}
-async function b() {
-  console.log('b start & end')
-  // console.log('b start')
-  // await ''
-  // console.log('b end')
-}
+// async function a() {
+//   console.log('a start')
+//   await b() // resolve(b())
+//   console.log('a end')
+// }
+// async function b() {
+//   console.log('b start & end')
+//   // console.log('b start')
+//   // await ''
+//   // console.log('b end')
+// }
 
-console.log('script start')
-a()
+// console.log('script start')
+// a()
 
-new Promise(resolve => {
-  console.log('promise start')
-  resolve()
-}).then(() => {
-  console.log('promise end')
-})
+// new Promise(resolve => {
+//   console.log('promise start')
+//   resolve()
+// }).then(() => {
+//   console.log('promise end')
+// })
 
-console.log('script end')
+// console.log('script end')
 
 
 // --- node
@@ -50,12 +50,12 @@ console.log('script end')
 
 // function b() {
 //   return new Promise(resolve => {
-//     console.log('b start')
+//     console.log('b start & end')
 //     resolve()
 //   })
-//     .then(() => {
-//       console.log('b end')
-//     })
+//     // .then(() => {
+//     //   console.log('b end')
+//     // })
 // }
 
 // console.log('script start')
@@ -71,3 +71,9 @@ console.log('script end')
 
 // console.log('script end')
 
+var a = {}
+a.a = a
+
+console.log(a === a.a)
+
+console.log(a)
