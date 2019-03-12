@@ -5,6 +5,7 @@ import T from '../T/T'
 
 class App extends Component {
   render() {
+    console.log(<div></div>)
     console.log(<T />)
     return (
       <div className="App">
