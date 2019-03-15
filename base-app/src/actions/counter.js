@@ -1,24 +1,3 @@
-// export const add = params => (dispatch, getState) => {
-//   dispatch({
-//     type: 'ADD'
-//   })
-// }
-
-// export const minus = params => (dispatch, getState) => {
-//   dispatch({
-//     type: 'MINUS'
-//   })
-// }
-
-// export const addAsync = params => (dispatch, getState) => {
-//   // 模拟异步
-//   setTimeout(() => {
-//     dispatch({
-//       type: 'ADD'
-//     })
-//   }, 1000)
-// }
-
 export function add() {
   return { type: 'ADD' }
 }

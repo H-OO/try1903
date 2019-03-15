@@ -1,20 +1,18 @@
-import React, { Component } from 'react'
 import './App.css'
+import React, { Component } from 'react'
+import P from '../P/P'
 
-import { connect } from 'react-redux'
+import Context from '../../context/context'
+const { Provider } = Context
 
 class App extends Component {
-  handler() {
-    console.log('handler')
-    this.setState({
-      num: this.state.num + 1
-    })
-  }
   render() {
-    console.log('render')
     return (
-      <div className="App">
-      </div>
+      <Provider value={{ msg: '123' }}>
+        <div className="App">
+          <P />
+        </div>
+      </Provider>
     )
   }
 }
