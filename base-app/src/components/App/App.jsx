@@ -7,10 +7,11 @@ const { Provider } = Context
 
 class App extends Component {
   render() {
+    console.log(this.props)
     return (
       <Provider value={{ msg: '123' }}>
         <div className="App">
-          <P />
+          <P t="x" />
         </div>
       </Provider>
     )
